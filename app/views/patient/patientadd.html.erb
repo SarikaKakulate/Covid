@@ -1,0 +1,36 @@
+<style>
+	h4 {text-align: center;}
+ h2 {text-align: center;}
+</style>
+<div class="Page New">
+
+<h2> Please Fill-up all Details: </h2>
+<h4>
+<%=form_for(:patient_record,url:{controller:"patient",action:'create'}) do |t| %>
+
+<p><label for="name">Patient Name</label>:
+<%=text_field 'patient','name' %></p>
+
+<p><label for=" address">Address</label>:
+<%=text_field 'patient','address' %></p>
+
+<p><label for=" mobno">Mobile No </label>:
+<%=text_field 'patient','mobno' %></p>
+
+<p><label for=" city">City </label>:
+<%=text_field 'patient','city' %></p>
+
+<p><label for=" symptoms">Symptoms </label>:
+<%=text_field 'patient','symptoms' %></p>
+
+<p><label for=" age">Age</label>:
+<%=text_field 'patient', 'age' %></p>
+
+<p><label for=" gender">Gender</label>:
+<%=text_field 'patient', 'gender' %></p>
+
+<div class="form-botton">
+  <%=submit_tag("Submit") %>
+</div>
+</h4>
+<% end -%>

@@ -1,0 +1,60 @@
+<!---
+
+<h1>Book list</h1>
+<% if @books.blank? %>
+<p> there are any books currently in the system</p>
+<% else %>
+<p>current book</p>
+<ul id="books">
+<% @books.each do |c| %>
+<li><%= link_to c.name, {:action=>'show',:controller=>'book',:id=>c.id} -%></li>
+<% end %>
+</ul>
+<%end%>
+<p><%= link_to "add new book",{:action => 'new',:controller=>'book'}%></p>
+<p><%= link_to "home",{:action=>'welcome',:controller=>'first'}%></p>
+<%=link_to" Back to home",controller: "first" ,action:'welcome',class:"back-link" %>
+--->
+
+<% @patient_name="Patient" %>
+
+<div class ="Patient Index">
+	<h1> Patient</h1>
+	<style>
+		table,th,td{
+			border:1px solid black;
+			border-collapse: collapse;
+		}
+		th,td{
+			padding:15px;
+		}
+	</style>
+	<%= link_to"Add New Patient",controller:"patient",action:'new',class:"action new" %>
+	<br>
+	<br>
+
+	<table class ="listing" summary="patient List"style="width:50%">
+		<tr class="header">
+			<th> Name </th>
+			<th> Symptoms </th>
+			<th> Age </th>
+			<th> Action</th>
+		</tr>
+		<tr>
+		</tr>
+		<% @patients.each do |b| %>
+		<tr class ="<%= cycle('odd','even') %>">
+			<td> <%=b.name %></td>
+			<td> <%=b.symptoms %></td>
+			<td> <%=b.age %></td>
+
+			<td class ="actions">
+				<%= link_to"Show",action:'show',id:b.id,class:"action show"%>
+				<%= link_to"Edit",action:'edit',id:b.id,class:"action edit"%>
+				<%= link_to"Delete",action:'delete',id:b.id,class:"action delete"%>
+			</td>
+		</tr>
+	<%end%>
+</table>
+</div>
+

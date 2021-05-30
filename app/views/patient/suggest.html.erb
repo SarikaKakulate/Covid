@@ -1,0 +1,30 @@
+
+<br><br>
+
+<div class="Page New">
+<h2>  Doctor </h2>
+
+<%=form_for(:doctor_record,url:{controller:"doctor",action:'create'}) do |t| %>
+
+<p><label for="name">DoctorName</label>:
+<%=text_field 'doctor','doctorname' %></p>
+
+<p><label for=" mobno">Mobile No </label>:
+<%=text_field 'doctor','dmobno' %></p>
+
+<p><label for=" city">City </label>:
+<%=text_field 'doctor','dcity' %></p>
+
+<p><label for=" patient_id">Patient Id</label>:
+<%=text_field 'doctor', 'patient_id' %></p>
+
+<p><label for=" symptoms">Medicine </label>:
+<%=text_field 'doctor','dmedicine' %></p>
+
+<p><label for=" symptoms">description </label>:
+<%=text_field 'doctor','ddescription' %></p>
+
+<div class="form-botton">
+  <%=submit_tag("Submit") %>
+</div>
+<% end -%>

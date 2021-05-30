@@ -1,0 +1,22 @@
+<html>
+<head>
+<style>
+
+h3{text-align: center}
+h2{text-align: center}
+</style>
+</head>
+<body>
+<div class ="record inserted">
+    <center><h2> Record Inserted Succesfully....!!! </h2>
+    </center>
+   <%=form_for(:doctors,url: { action:'home'})do |t|%>
+  <h3>
+    <div class="form-button">
+    	<%=submit_tag("Go To Home Page")%>
+    </div>
+</h3>
+    <%end %>
+</div>
+</body>
+</html>

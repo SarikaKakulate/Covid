@@ -1,0 +1,40 @@
+<%=link_to "Back to list",controller:"patient" ,action:'list',class:"back-link" %>
+<div class ="Page New">
+   <h2> create new record</h2>
+   <%=form_for(:patients,url: {controller:"patient", action:'create'})do |t|%>
+    <table summary="patient form fields">
+    	<tr>
+    		<th> Name </th>
+    		<td> <%=t.text_field(:name)%> </td>
+    	</tr>
+    	<tr>
+    		<th> address </th>
+    		<td> <%=t.text_field(:address)%> </td>
+    	</tr>
+    	<tr>
+    		<th> mobno </th>
+    		<td> <%=t.text_field(:mobno)%> </td>
+    	</tr>
+        <tr>
+            <th> city</th>
+            <td> <%=t.text_field(:city)%> </td>
+        </tr>
+        <tr>
+            <th> symptoms</th>
+            <td> <%=t.text_field(:symptoms)%> </td>
+        </tr>
+        <tr>
+            <th> age </th>
+            <td> <%=t.text_field(:age)%> </td>
+        </tr>
+        <tr>
+            <th> gender</th>
+            <td> <%=t.text_field(:gender)%> </td>
+        </tr>
+    </table>
+    <div class="form-button">
+    	<%=submit_tag("create patient")%>
+    </div>
+    <%end %>
+</div>
+

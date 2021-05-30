@@ -1,0 +1,21 @@
+<br><br><h1><%= @patient.name %></h1>
+<p>
+<br>	
+<strong>Name:</strong> <%= @patient.name %><br/>
+<strong>Age:</strong><%= @patient.age%><br/>
+<strong>Symptoms:</strong><%= @patient.symptoms%><br/>
+<strong>Created date:</strong><%= @patient.created_at%><br/>
+</p>
+<hr/>
+<%= link_to 'Back', {:action =>'list'} %>
+<%#<%= link_to 'suggest' ,{:action =>'suggest'} %>
+<div class ="patient suggest">
+   <%=form_for(:doctors,url: { action:'suggest',id:@patient.id})do |t|%>
+   <%#<p class="reference-name"><%=@patient.name ></p>%>
+    <div class="form-button">
+    	<%=submit_tag("Suggest patient")%>
+    </div>
+    <%end %>
+</div>
+
+
